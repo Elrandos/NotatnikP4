@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPF_lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_lab3"
+        mc:Ignorable="d"
+        Title="The best notebook at UBB." Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="2" Content="Your Notes" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <Label Content="LOGIN" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+
+        <Button x:Name="User_Button" Grid.Row="1" Grid.Column="1" Content="USER" Margin="20, 30" Click="User_Button_Click"></Button>
+        <Button x:Name="EditTask_Button" Grid.Row="4" Grid.Column="2" Content="Edit task" Margin="20,30" Click="EditNote_Button_Click"></Button>
+        <Button x:Name="CreateTask_Button" Grid.Row="4" Grid.Column="3" Content="Create task" Margin="20,30" Click="CreateTask_Button_Click" Background="Green" FontWeight="Bold"></Button>
+
+
+        <ListView x:Name="Task_ListView" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="450"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <TextBlock Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap">
+            Create by
+            Radosław
+            Bryła
+        </TextBlock>
+    </Grid>
+</Window>
